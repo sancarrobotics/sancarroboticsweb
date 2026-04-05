@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotlar | Sancar Robotics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color: var(--primary-color);">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">
+                <img src="../img/logo.png" alt="Sancar Logo" height="40" class="d-inline-block align-text-center me-2">
+                SANCAR ROBOTICS
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-uppercase fw-semibold align-items-center">
+                    
+                    <li class="nav-item"><a class="nav-link" href="../index.html" data-lang="nav_home">ANA SAYFA</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="about.html" data-lang="nav_about">HAKKIMIZDA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="robots.html" data-lang="nav_robots">ROBOTLAR</a></li>
+                    <li class="nav-item"><a class="nav-link" href="outreach.html" data-lang="nav_outreach">SOSYAL SORUMLULUK</a></li>
+                    
+                    <li class="nav-item position-relative me-3">
+                        <a class="nav-link text-warning fw-bold" href="futureforge.html" data-lang="nav_ff">FUTURE FORGE</a>
+                        <span class="nav-badge-new" data-lang="badge_new">YENİ</span>
+                    </li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="resources.html" data-lang="nav_resources">KAYNAKLAR</a></li>
+                    <li class="nav-item"><a class="nav-link" href="media.html" data-lang="nav_media">MEDYA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sponsor.html" data-lang="nav_sponsor">SPONSOR</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contact" data-lang="nav_contact">İLETİŞİM</a></li>
+                    
+                    <li class="nav-item ms-3 border-start ps-3 border-secondary d-none d-lg-block"></li>
+                    <li class="nav-item mt-3 mt-lg-0">
+                        <button onclick="changeLanguage('tr')" id="btn-tr" class="btn btn-link text-decoration-none text-white p-0 me-2 small">TR</button>
+                        <span class="text-white-50">|</span>
+                        <button onclick="changeLanguage('en')" id="btn-en" class="btn btn-link text-decoration-none text-white-50 p-0 ms-2 small">EN</button>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-5 bg-dark text-white text-center mt-5">
+        <div class="container pt-5">
+            <h1 class="display-4 fw-bold" data-lang="robots_title">ROBOTLARIMIZ</h1>
+            <p class="lead" data-lang="robots_sub">Mühendislik Arşivi ve Teknik Detaylar</p>
+        </div>
+    </header>
+
+    <section class="py-4 bg-white border-bottom sticky-top" style="top: 70px; z-index: 10;">
+        <div class="container d-flex justify-content-center">
+            <ul class="nav nav-pills" id="seasonTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active rounded-pill px-5 me-3 fw-bold border border-secondary" id="s2025-tab" data-bs-toggle="tab" data-bs-target="#s2025" type="button" role="tab">
+                        <i class="fa-solid fa-calendar-check me-2"></i>2025
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link rounded-pill px-5 fw-bold border border-secondary" id="s2026-tab" data-bs-toggle="tab" data-bs-target="#s2026" type="button" role="tab">
+                        <i class="fa-solid fa-hourglass-start me-2"></i>2026
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="tab-content" id="seasonTabContent">
+        
+        <div class="tab-pane fade show active py-5" id="s2025" role="tabpanel">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-12 border-bottom pb-2">
+                        <h2 class="fw-bold text-primary"><span data-lang="season_2025">2025: REEFSCAPE</span> <span class="badge bg-secondary fs-6 align-middle">ROOKIE YEAR</span></h2>
+                    </div>
+                </div>
+
+                <div class="card shadow-lg border-0 overflow-hidden mb-5">
+                    <div class="row g-0">
+                        
+                        <div class="col-md-6 p-0" style="min-height: 400px;">
+                            <img src="../img/2025-robot.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="2025 Sancar Robotics Robotu">
+                        </div>
+                        
+                        <div class="col-md-6 p-4 d-flex flex-column justify-content-center">
+                            <h3 class="fw-bold mb-3"><span data-lang="robot_name_label">Robot Adı:</span> <span class="text-muted fst-italic" data-lang="robot_name_val">(İsim Belirlenmedi)</span></h3>
+                            
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item bg-transparent">
+                                    <strong data-lang="robot_game">Oyun:</strong> FIRST REEFSCAPE
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    <strong data-lang="robot_comp">Yarışma:</strong> Ankara Regional (Rank 28)
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    <strong data-lang="robot_success">Başarı:</strong> <span data-lang="robot_success_val">Çeyrek Finalist & Team Spirit Award</span>
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    <strong data-lang="robot_weight">Ağırlık:</strong> ~52 kg
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    <strong data-lang="robot_drive">Sürüş Tipi:</strong> Tank Drive
+                                </li>
+                            </ul>
+
+                            <div class="d-flex gap-3">
+                                <a href="#" class="btn btn-dark disabled">
+                                    <i class="fa-brands fa-github me-2"></i><span data-lang="btn_code">Yazılım (Yakında)</span>
+                                </a>
+                                <a href="#" class="btn btn-outline-dark disabled">
+                                    <i class="fa-solid fa-cube me-2"></i><span data-lang="btn_cad">CAD Dosyaları (Yakında)</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="fw-bold mb-4" data-lang="tech_specs_title">Teknik Özellikler</h3>
+                <div class="row">
+                    
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 border-0 shadow-sm tech-card">
+                            <div class="card-header bg-white border-bottom-0 pt-4 px-4">
+                                <i class="fa-solid fa-gears fa-2x text-primary mb-2"></i>
+                                <h5 class="fw-bold" data-lang="tech_mech_title">Mekanik & Şasi</h5>
+                            </div>
+                            <div class="card-body px-4">
+                                <p class="text-muted small" data-lang="tech_mech_text">
+                                    Robotumuzun hareket altyapısı, AndyMark şasi platformuna dayanmaktadır. 
+                                    "Tank Drive" sistemi ile yüksek dayanıklılık ve saha içi kararlılık hedeflenmiştir.
+                                </p>
+                                <p class="text-muted small fw-bold" data-lang="tech_mech_specs">Şasi: Kitbot, Tekerlek: HiGrip, Dişli: Toughbox Mini</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 border-0 shadow-sm tech-card">
+                            <div class="card-header bg-white border-bottom-0 pt-4 px-4">
+                                <i class="fa-solid fa-hand-holding fa-2x text-primary mb-2"></i>
+                                <h5 class="fw-bold" data-lang="tech_mech_sys_title">Mekanizmalar</h5>
+                            </div>
+                            <div class="card-body px-4">
+                                <p class="text-muted small" data-lang="tech_mech_sys_text">
+                                    2025 REEFSCAPE oyununa özel tasarlanan mekanizmalarımız:
+                                </p>
+                                <ul class="text-muted small">
+                                    <li>Intake</li>
+                                    <li>Shooter</li>
+                                    <li>Climber</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 border-0 shadow-sm tech-card">
+                            <div class="card-header bg-white border-bottom-0 pt-4 px-4">
+                                <i class="fa-solid fa-code fa-2x text-primary mb-2"></i>
+                                <h5 class="fw-bold" data-lang="tech_soft_title">Yazılım & Kontrol</h5>
+                            </div>
+                            <div class="card-body px-4">
+                                <p class="text-muted small" data-lang="tech_soft_text">
+                                    Robot kontrolü Java/WPILib tabanlı mimari üzerine kurulmuştur. Otonom periyotta görüntü işleme ve yol takibi hedeflenmiştir.
+                                </p>
+                                <ul class="text-muted small">
+                                    <li>Java (WPILib)</li>
+                                    <li>Logitech F310</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade py-5" id="s2026" role="tabpanel">
+            <div class="container text-center py-5">
+                <div class="p-5 border border-2 border-dashed rounded bg-white">
+                    <i class="fa-solid fa-flask fa-5x text-muted mb-4 animate-pulse"></i>
+                    <h2 class="fw-bold text-muted" data-lang="season_2026">2026: SEZON YÜKLENİYOR...</h2>
+                    <h3 class="fw-bold mt-3 text-primary" data-lang="robot_soon_title">YENİ ŞAMPİYON YOLDA</h3>
+                    <p class="lead text-muted mx-auto" style="max-width: 600px;" data-lang="robot_soon_desc">
+                        Mühendislerimiz 2026 sezonu için laboratuvarda sıkı çalışıyor. Detaylar Kick-off sonrası burada olacak!
+                    </p>
+                    <div class="mt-4">
+                        <span class="badge bg-secondary p-2">FRC SEASON 2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="py-4 bg-black text-white text-center">
+        <div class="container">
+            <p class="small text-muted mb-0" data-lang="footer_rights">© 2026 Sancar Robotics #10470. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../language.js"></script>
+</body>
+</html>

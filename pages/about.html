@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda | Sancar Robotics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color: var(--primary-color);">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">
+                <img src="../img/logo.png" alt="Sancar Logo" height="40" class="d-inline-block align-text-center me-2">
+                SANCAR ROBOTICS
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-uppercase fw-semibold align-items-center">
+                    
+                    <li class="nav-item"><a class="nav-link" href="../index.html" data-lang="nav_home">ANA SAYFA</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="about.html" data-lang="nav_about">HAKKIMIZDA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="robots.html" data-lang="nav_robots">ROBOTLAR</a></li>
+                    <li class="nav-item"><a class="nav-link" href="outreach.html" data-lang="nav_outreach">SOSYAL SORUMLULUK</a></li>
+                    
+                    <li class="nav-item position-relative me-3">
+                        <a class="nav-link text-warning fw-bold" href="futureforge.html" data-lang="nav_ff">FUTURE FORGE</a>
+                        <span class="nav-badge-new" data-lang="badge_new">YENİ</span>
+                    </li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="resources.html" data-lang="nav_resources">KAYNAKLAR</a></li>
+                    <li class="nav-item"><a class="nav-link" href="media.html" data-lang="nav_media">MEDYA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sponsor.html" data-lang="nav_sponsor">SPONSOR</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contact" data-lang="nav_contact">İLETİŞİM</a></li>
+                    
+                    <li class="nav-item ms-3 border-start ps-3 border-secondary d-none d-lg-block"></li>
+                    <li class="nav-item mt-3 mt-lg-0">
+                        <button onclick="changeLanguage('tr')" id="btn-tr" class="btn btn-link text-decoration-none text-white p-0 me-2 small">TR</button>
+                        <span class="text-white-50">|</span>
+                        <button onclick="changeLanguage('en')" id="btn-en" class="btn btn-link text-decoration-none text-white-50 p-0 ms-2 small">EN</button>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-5 bg-dark text-white text-center mt-5">
+        <div class="container pt-5">
+            <h1 class="display-4 fw-bold" data-lang="about_title">HAKKIMIZDA</h1>
+            <p class="lead" data-lang="about_subtitle">More Than Robots: Bir Takımdan Fazlası</p>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="../img/team-photo.jpg" alt="Sancar Robotics Takımı" class="img-fluid rounded shadow mb-4">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-heading text-uppercase fw-bold mb-3" data-lang="who_we_are_title">Biz Kimiz?</h2>
+                    <p class="text-muted" data-lang="who_we_are_text1">
+                        Takımımız 2024 yılında Ankara'da kurulmuş olup, katılım numaramız 10470'tir. 
+                        İsmimizi Nobel ödüllü bilim insanımız Aziz Sancar'dan alıyor, onun bilimsel mirasını 
+                        teknolojiyle buluşturuyoruz.
+                    </p>
+                    <p class="text-muted" data-lang="who_we_are_text2">
+                        2025 yılı bizim için bir başlangıç yılıydı (Rookie). İlk sezonumuzda Ankara Regional'a katılarak 
+                        35 takım arasında çeyrek finale yükseldik ve takım ruhumuzla "Team Spirit Award" ödülünü kazandık.
+                        AAAL ve Aziz Sancar Fen Lisesi'nden 50'yi aşkın üyemizle geleceği tasarlıyoruz.
+                    </p>
+                    <div class="row text-center mt-4">
+                        <div class="col-4">
+                            <h3 class="fw-bold text-primary">50+</h3>
+                            <p class="small" data-lang="stat_member">Üye</p>
+                        </div>
+                        <div class="col-4">
+                            <h3 class="fw-bold text-primary">2</h3>
+                            <p class="small" data-lang="stat_school">Okul</p>
+                        </div>
+                        <div class="col-4">
+                            <h3 class="fw-bold text-primary">1</h3>
+                            <p class="small" data-lang="stat_award">Takım</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-uppercase" data-lang="frc_what_title">FRC Nedir?</h2>
+                <div class="divider mx-auto bg-primary" style="width: 60px; height: 3px;"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <p class="lead text-muted" data-lang="frc_text1">
+                        FIRST Robotics Competition (FRC), uluslararası düzeyde düzenlenen ve liseli öğrencileri heyecanlı 
+                        bir spor atmosferinde bir araya getiren prestijli bir robotik turnuvasıdır.
+                    </p>
+                    <p class="text-muted" data-lang="frc_text2">
+                        Mottosu "More than robots" (Bir robottan daha fazlası) olan bu organizasyonda; işbirliği, dostluk, 
+                        takım çalışması ve "Duyarlı Profesyonellik" (Gracious Professionalism) ilkeleri rehberlik eder. 
+                        Öğrenciler sadece robot yapmaz; mühendislik, girişimcilik ve liderlik becerileri kazanır.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-uppercase" data-lang="values_title">Değerlerimiz</h2>
+                <p class="text-muted" data-lang="values_subtitle">Bizi biz yapan temel prensipler</p>
+            </div>
+            
+            <div class="row text-center mb-5">
+                <div class="col-md">
+                    <div class="p-3 bg-white shadow-sm rounded mb-3 value-card">
+                        <i class="fa-solid fa-users fa-2x text-primary mb-2"></i>
+                        <h5 class="fw-bold" data-lang="val_spirit">Takım Ruhu</h5>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="p-3 bg-white shadow-sm rounded mb-3 value-card">
+                        <i class="fa-solid fa-lightbulb fa-2x text-primary mb-2"></i>
+                        <h5 class="fw-bold" data-lang="val_innovation">İnovasyon</h5>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="p-3 bg-white shadow-sm rounded mb-3 value-card">
+                        <i class="fa-solid fa-handshake fa-2x text-primary mb-2"></i>
+                        <h5 class="fw-bold" data-lang="val_collab">İş Birliği</h5>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="p-3 bg-white shadow-sm rounded mb-3 value-card">
+                        <i class="fa-solid fa-graduation-cap fa-2x text-primary mb-2"></i>
+                        <h5 class="fw-bold" data-lang="val_learning">Öğrenme</h5>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="p-3 bg-white shadow-sm rounded mb-3 value-card">
+                        <i class="fa-solid fa-heart fa-2x text-primary mb-2"></i>
+                        <h5 class="fw-bold" data-lang="val_care">Duyarlılık</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h4 class="fw-bold text-primary" data-lang="mission_title">Misyonumuz</h4>
+                    <p class="text-muted" data-lang="mission_long">
+                        Sadece robot üreten değil; düşünmeyi, üretmeyi ve paylaşmayı öğrenen bireyler yetiştirmeyi amaçlıyoruz. 
+                        Gençleri STEM alanlarında eğitiyor, takım çalışması ve liderlik becerilerini geliştiriyoruz.
+                    </p>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h4 class="fw-bold text-primary" data-lang="vision_title">Vizyonumuz</h4>
+                    <p class="text-muted" data-lang="vision_long">
+                        Türkiye'yi FRC Dünya Şampiyonası'nda başarıyla temsil etmek, Winning Alliance ve Impact Award gibi 
+                        büyük ödülleri kazanmak ve teknolojiyi ülkenin her yerindeki gençlerin hayatına entegre etmektir.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-white">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="fw-bold text-uppercase mb-4" data-lang="leadership_title">Takımımız</h2>
+                    <p class="text-muted mb-5" data-lang="leadership_sub">
+                        Takımımız, kaptanlarımız ve departman liderlerimiz öncülüğünde 50'den fazla üye ile kocaman bir ailedir.
+                    </p>
+                    
+                    <a href="team.html" class="btn btn-outline-primary btn-lg rounded-pill px-5">
+                        <i class="fa-solid fa-users me-2"></i><span data-lang="btn_meet_team">TÜM EKİBİ TANI</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-uppercase" data-lang="mentors_title">Mentörlerimiz</h2>
+                <p class="text-white-50" data-lang="mentors_sub">Tecrübeleriyle bize yol gösteren rehberlerimiz</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="d-flex align-items-center bg-secondary bg-opacity-25 p-3 rounded">
+                        <img src="https://via.placeholder.com/100" class="rounded-circle me-3" alt="Mentör" style="width: 80px; height: 80px; object-fit: cover;">
+                        <div>
+                            <h5 class="fw-bold mb-1">Fatih Tan</h5>
+                            <p class="small text-white-50 mb-0">Lead Mentor / Öğretmen</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 bg-black text-white text-center">
+        <div class="container">
+            <p class="small text-muted mb-0" data-lang="footer_rights">© 2026 Sancar Robotics #10470. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../language.js"></script>
+</body>
+</html>

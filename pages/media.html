@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medya & Haberler | Sancar Robotics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color: var(--primary-color);">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">
+                <img src="../img/logo.png" alt="Sancar Logo" height="40" class="d-inline-block align-text-center me-2">
+                SANCAR ROBOTICS
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-uppercase fw-semibold align-items-center">
+                    
+                    <li class="nav-item"><a class="nav-link" href="../index.html" data-lang="nav_home">ANA SAYFA</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="about.html" data-lang="nav_about">HAKKIMIZDA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="robots.html" data-lang="nav_robots">ROBOTLAR</a></li>
+                    <li class="nav-item"><a class="nav-link" href="outreach.html" data-lang="nav_outreach">SOSYAL SORUMLULUK</a></li>
+                    
+                    <li class="nav-item position-relative me-3">
+                        <a class="nav-link text-warning fw-bold" href="futureforge.html" data-lang="nav_ff">FUTURE FORGE</a>
+                        <span class="nav-badge-new" data-lang="badge_new">YENİ</span>
+                    </li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="resources.html" data-lang="nav_resources">KAYNAKLAR</a></li>
+                    <li class="nav-item"><a class="nav-link" href="media.html" data-lang="nav_media">MEDYA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sponsor.html" data-lang="nav_sponsor">SPONSOR</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contact" data-lang="nav_contact">İLETİŞİM</a></li>
+                    
+                    <li class="nav-item ms-3 border-start ps-3 border-secondary d-none d-lg-block"></li>
+                    <li class="nav-item mt-3 mt-lg-0">
+                        <button onclick="changeLanguage('tr')" id="btn-tr" class="btn btn-link text-decoration-none text-white p-0 me-2 small">TR</button>
+                        <span class="text-white-50">|</span>
+                        <button onclick="changeLanguage('en')" id="btn-en" class="btn btn-link text-decoration-none text-white-50 p-0 ms-2 small">EN</button>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-5 bg-dark text-white text-center mt-5">
+        <div class="container pt-5">
+            <h1 class="display-4 fw-bold" data-lang="media_title">MEDYA MERKEZİ</h1>
+            <p class="lead" data-lang="media_sub">Haberler, Fotoğraflar ve Maç Özetleri</p>
+        </div>
+    </header>
+
+    <section class="py-4 bg-white border-bottom sticky-top" style="top: 70px; z-index: 10;">
+        <div class="container d-flex justify-content-center">
+            <ul class="nav nav-pills" id="mediaTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active rounded-pill px-4" id="news-tab" data-bs-toggle="tab" data-bs-target="#news" type="button" role="tab" data-lang="tab_news">HABERLER</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link rounded-pill px-4" id="gallery-tab" data-bs-toggle="tab" data-bs-target="#gallery" type="button" role="tab" data-lang="tab_gallery">GALERİ</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link rounded-pill px-4" id="video-tab" data-bs-toggle="tab" data-bs-target="#video" type="button" role="tab" data-lang="tab_video">VİDEOLAR</button>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="tab-content" id="mediaTabContent">
+        
+        <div class="tab-pane fade show active py-5" id="news" role="tabpanel">
+            <div class="container">
+            
+
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <div class="card border-0 shadow-lg news-card position-relative overflow-hidden">
+                            <div class="row g-0">
+                                <div class="col-lg-5 order-lg-2">
+                                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" class="img-fluid w-100 h-100" style="object-fit: cover; min-height: 300px;" alt="STEM Trailblazers">
+                                </div>
+                                <div class="col-lg-7 p-4 p-lg-5 d-flex flex-column justify-content-center order-lg-1">
+                                    <div class="text-warning fw-bold mb-2 text-uppercase">
+                                        <i class="fa-solid fa-gamepad me-2"></i>Dijital Oyun
+                                    </div>
+                                    <h2 class="card-title fw-bold display-6 mb-3" data-lang="news_game_title">STEM Oyunumuz Yayında: STEM Trailblazers</h2>
+                                    <p class="card-text text-muted fs-5 mb-4" data-lang="news_game_desc">
+                                        Çocuklara mühendisliği ve bilimi sevdirmek için geliştirdiğimiz dijital oyunumuz yayında! Oynamak ve keşfetmek için hemen tıklayın.
+                                    </p>
+                                    <div>
+                                        <a href="https://sancarrobotics.github.io/STEMtrailblazers/" target="_blank" class="btn btn-danger btn-lg rounded-pill px-5 shadow">
+                                            <i class="fa-solid fa-play me-2"></i><span data-lang="btn_play_game">OYUNU OYNA</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="tab-pane fade py-5" id="gallery" role="tabpanel">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <div class="card border-0 shadow-lg news-card position-relative overflow-hidden">
+                            <div class="position-absolute top-0 end-0 bg-danger text-white px-4 py-2 fw-bold fs-5" style="border-bottom-left-radius: 15px; z-index: 10;">
+                                <i class="fa-solid fa-star me-2"></i>YENİ
+                            </div>
+                            <div class="row g-0">
+                                <div class="col-lg-5">
+                                    <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=1000&auto=format&fit=crop" class="img-fluid w-100 h-100" style="object-fit: cover; min-height: 300px;" alt="Atıktan Sanata">
+                                </div>
+                                <div class="col-lg-7 p-4 p-lg-5 d-flex flex-column justify-content-center">
+                                    <div class="text-primary fw-bold mb-2 text-uppercase">
+                                        <i class="fa-solid fa-palette me-2"></i>Sanal Sergi
+                                    </div>
+                                    <h2 class="card-title fw-bold display-6 mb-3" data-lang="news_art_title">Sanal Sergi: Atıktan Sanata</h2>
+                                    <p class="card-text text-muted fs-5 mb-4" data-lang="news_art_desc">
+                                        Teknoloji ve sanatı birleştirdik! Geri dönüşüm malzemeleriyle tasarladığımız eserlerin yer aldığı dijital sergimizi hemen ziyaret edin.
+                                    </p>
+                                    <div>
+                                        <a href="https://sancarrobotics.github.io/atiktansanata_10470/" target="_blank" class="btn btn-primary btn-lg rounded-pill px-5 shadow">
+                                            <i class="fa-solid fa-vr-cardboard me-2"></i><span data-lang="btn_visit_exhibition">SERGİYİ GEZ</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                
+                <div class="row mb-4">
+                    <div class="col-12 border-bottom border-secondary pb-2 text-center">
+                        <h2 class="fw-bold text-primary text-uppercase" data-lang="season_highlights_title">BU SEZON NELER YAPTIK?</h2>
+                        <p class="text-muted">Sezon boyunca gerçekleştirdiğimiz etkinliklerden kareler.</p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                            <img src="../img/kickoff.jpg" class="card-img-top" style="height: 250px; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" alt="Kick-off">
+                            <div class="card-body p-4 bg-white">
+                                <h5 class="fw-bold mb-2 text-primary" data-lang="hl_1_title">Kick-off & Yağmur Sergen</h5>
+                                <p class="text-muted small mb-0" data-lang="hl_1_desc">Kendi Kick-off etkinliğimizi düzenledik. AAAL mezunu ve Rafadan Tayfa animasyonunda 'Kamil' karakterini seslendiren Yağmur Sergen'i ağırladık.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                            <img src="../img/stem.jpg" class="card-img-top" style="height: 250px; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" alt="STEM Eğitim">
+                            <div class="card-body p-4 bg-white">
+                                <h5 class="fw-bold mb-2 text-primary" data-lang="hl_2_title">Miniklere STEM ve Mühendislik</h5>
+                                <p class="text-muted small mb-0" data-lang="hl_2_desc">İlkokul ve ortaokul öğrencilerine FIRST vakfını anlattık. Deneyler ve etkinliklerle mühendisliği ve STEM’i sevdirdik, eğlenirken öğrendik.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                            <img src="../img/plan.jpg" class="card-img-top" style="height: 250px; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" alt="Planlama">
+                            <div class="card-body p-4 bg-white">
+                                <h5 class="fw-bold mb-2 text-primary" data-lang="hl_3_title">Kick-off Sonrası Strateji</h5>
+                                <p class="text-muted small mb-0" data-lang="hl_3_desc">Kick-off etkinliği sonrası takımca toplanıp strateji ve planlar yaptık, yepyeni ve özgün fikirler ürettik.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                            <img src="../img/losev.jpg" class="card-img-top" style="height: 250px; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" alt="Lösev Ziyareti">
+                            <div class="card-body p-4 bg-white">
+                                <h5 class="fw-bold mb-2 text-danger" data-lang="hl_4_title">LÖSEV Ziyareti</h5>
+                                <p class="text-muted small mb-0" data-lang="hl_4_desc">LÖSEV vakfını ziyaret ettik. 'LÖSEV’in İncileri' programında yer alarak lösemi hastası kardeşlerimize umut olduk.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                            <img src="../img/egitim.jpg" class="card-img-top" style="height: 250px; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" alt="Teknik Eğitim">
+                            <div class="card-body p-4 bg-white">
+                                <h5 class="fw-bold mb-2 text-primary" data-lang="hl_5_title">Takım İçi Teknik Eğitimler</h5>
+                                <p class="text-muted small mb-0" data-lang="hl_5_desc">Takım üyelerimize robotumuzun mekaniği ve parçaların nasıl işlediği hakkında detaylı eğitimler verdik.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                            <img src="../img/atolye.jpg" class="card-img-top" style="height: 250px; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" alt="Atölye">
+                            <div class="card-body p-4 bg-white">
+                                <h5 class="fw-bold mb-2 text-primary" data-lang="hl_6_title">Atölye Çalışmaları Başladı</h5>
+                                <p class="text-muted small mb-0" data-lang="hl_6_desc">Eğitimlerin ardından atölye çalışmalarımızın başlamasıyla robotumuzu inşa etme sürecinde ilk adımlarımızı attık.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="tab-pane fade py-5" id="video" role="tabpanel">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 mb-5">
+                        <div class="card border-0 shadow-lg overflow-hidden">
+                            <div class="ratio ratio-16x9">
+                                <iframe 
+                                    src="https://www.youtube.com/embed/29ssZSurwdM" 
+                                    title="Sancar Robotics Video" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="card-body bg-dark text-white">
+                                <h5 class="fw-bold mb-1"><i class="fa-brands fa-youtube text-danger me-2"></i>Sancar Robotics Tanıtım</h5>
+                                <p class="small text-white-50 mb-0">2025 Sezonu ve Takım Çalışmalarımız</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+        <div class="tab-pane fade py-5" id="video" role="tabpanel">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 mb-5">
+                        <div class="card border-0 shadow-lg overflow-hidden">
+                            <div class="ratio ratio-16x9">
+                                <iframe 
+                                    src="https://www.youtube.com/embed/29ssZSurwdM" 
+                                    title="Sancar Robotics Video" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="card-body bg-dark text-white">
+                                <h5 class="fw-bold mb-1"><i class="fa-brands fa-youtube text-danger me-2"></i>Sancar Robotics</h5>
+                                <p class="small text-white-50 mb-0">2025 Season Qualifications</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="py-4 bg-black text-white text-center">
+        <div class="container">
+            <p class="small text-muted mb-0" data-lang="footer_rights">© 2026 Sancar Robotics #10470. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../language.js"></script>
+</body>
+</html>

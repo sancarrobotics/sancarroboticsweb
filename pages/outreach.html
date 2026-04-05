@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sosyal Sorumluluk | Sancar Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        #outreachMap {
+            height: 500px;
+            width: 100%;
+            border-radius: 15px;
+            z-index: 1;
+        }
+        /* Harita Popup Stili */
+        .leaflet-popup-content-wrapper {
+            background: rgba(0, 35, 102, 0.9);
+            color: #fff;
+            border-bottom: 3px solid var(--accent-color);
+        }
+        .leaflet-popup-tip {
+            background: rgba(0, 35, 102, 0.9);
+        }
+        .leaflet-popup-content b {
+            color: #D6001C; /* Sancar Kırmızısı */
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color: var(--primary-color);">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">
+                <img src="../img/logo.png" alt="Sancar Logo" height="40" class="d-inline-block align-text-center me-2">
+                SANCAR ROBOTICS
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-uppercase fw-semibold align-items-center">
+                    
+                    <li class="nav-item"><a class="nav-link" href="../index.html" data-lang="nav_home">ANA SAYFA</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="about.html" data-lang="nav_about">HAKKIMIZDA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="robots.html" data-lang="nav_robots">ROBOTLAR</a></li>
+                    <li class="nav-item"><a class="nav-link" href="outreach.html" data-lang="nav_outreach">SOSYAL SORUMLULUK</a></li>
+                    
+                    <li class="nav-item position-relative me-3">
+                        <a class="nav-link text-warning fw-bold" href="futureforge.html" data-lang="nav_ff">FUTURE FORGE</a>
+                        <span class="nav-badge-new" data-lang="badge_new">YENİ</span>
+                    </li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="resources.html" data-lang="nav_resources">KAYNAKLAR</a></li>
+                    <li class="nav-item"><a class="nav-link" href="media.html" data-lang="nav_media">MEDYA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sponsor.html" data-lang="nav_sponsor">SPONSOR</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contact" data-lang="nav_contact">İLETİŞİM</a></li>
+                    
+                    <li class="nav-item ms-3 border-start ps-3 border-secondary d-none d-lg-block"></li>
+                    <li class="nav-item mt-3 mt-lg-0">
+                        <button onclick="changeLanguage('tr')" id="btn-tr" class="btn btn-link text-decoration-none text-white p-0 me-2 small">TR</button>
+                        <span class="text-white-50">|</span>
+                        <button onclick="changeLanguage('en')" id="btn-en" class="btn btn-link text-decoration-none text-white-50 p-0 ms-2 small">EN</button>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-5 bg-dark text-white text-center mt-5">
+        <div class="container pt-5">
+            <h1 class="display-4 fw-bold" data-lang="outreach_title">TOPLUM & ETKİ</h1>
+            <p class="lead" data-lang="outreach_sub">Bilimi Yayıyor, Geleceğe İlham Oluyoruz</p>
+        </div>
+    </header>
+
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 mb-4">
+                    <div class="p-4 border rounded shadow-sm h-100">
+                        <i class="fa-solid fa-school fa-3x text-primary mb-3"></i>
+                        <h3 class="fw-bold">10+</h3>
+                        <p class="text-muted" data-lang="stat_visit">Okul & Sınıf Ziyareti</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="p-4 border rounded shadow-sm h-100">
+                        <i class="fa-solid fa-earth-europe fa-3x text-primary mb-3"></i>
+                        <h3 class="fw-bold">3</h3> <p class="text-muted" data-lang="stat_global">Uluslararası Bağlantı</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="p-4 border rounded shadow-sm h-100">
+                        <i class="fa-solid fa-venus fa-3x text-primary mb-3"></i>
+                        <h3 class="fw-bold">20+</h3>
+                        <p class="text-muted" data-lang="stat_girls">Technovation Girls Katılımcısı</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="p-4 border rounded shadow-sm h-100">
+                        <i class="fa-solid fa-gamepad fa-3x text-primary mb-3"></i>
+                        <h3 class="fw-bold">1</h3>
+                        <p class="text-muted" data-lang="stat_game">Geliştirilen Dijital Oyun</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 text-white position-relative" style="background-color: var(--primary-color);">
+        
+        <div class="container position-relative z-1">
+            <div class="row mb-5 text-center">
+                <div class="col-12">
+                    <h2 class="fw-bold display-5" data-lang="map_title">ETKİ AĞIMIZ</h2>
+                    <p class="lead opacity-75" data-lang="map_sub">Sınırları aşıyor, teknolojiyi yayıyoruz. (Haritada gezinebilirsiniz)</p>
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-lg-3 mb-4 mb-lg-0">
+                    <div class="d-flex flex-column gap-3">
+                        <div class="p-4 rounded bg-dark bg-opacity-50 border-start border-4 border-danger shadow-sm">
+                            <h2 class="display-4 fw-bold text-danger">9</h2> <span class="small text-white-50 fw-bold letter-spacing-1" data-lang="map_stat_team">ULAŞILAN TAKIM</span>
+                        </div>
+                        <div class="p-4 rounded bg-dark bg-opacity-50 border-start border-4 border-light shadow-sm">
+                            <h2 class="display-4 fw-bold text-white mb-0">5</h2> <span class="small text-white-50 fw-bold letter-spacing-1" data-lang="map_stat_city">ŞEHİR / BÖLGE</span>
+                        </div>
+                        <div class="p-4 rounded bg-dark bg-opacity-50 border-start border-4 border-light shadow-sm">
+                            <h2 class="display-4 fw-bold text-white mb-0">3</h2> <span class="small text-white-50 fw-bold letter-spacing-1" data-lang="map_stat_country">ÜLKE</span>
+                        </div>
+                        
+                        <div class="mt-2 p-3 rounded bg-white bg-opacity-10 border border-white">
+                            <div class="d-flex align-items-center">
+                                <i class="fa-solid fa-rocket fa-2x me-3 text-warning"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-0">Global Bağlantı</h6>
+                                    <small class="text-white-50">California'dan Space Cookies ile buluşma!</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-9">
+                    <div id="outreachMap" class="shadow-lg border border-secondary"></div>
+                    <div class="text-center mt-2">
+                        <small class="text-white-50 fst-italic"><i class="fa-solid fa-hand-pointer me-1"></i> Haritayı sürükleyebilir, tekerlek ile yakınlaştırabilirsiniz.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4 bg-light border-bottom sticky-top" style="top: 70px; z-index: 10;">
+        <div class="container d-flex justify-content-center">
+            <ul class="nav nav-pills" id="projectTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active rounded-pill px-4 me-2" id="edu-tab" data-bs-toggle="tab" data-bs-target="#edu" type="button" role="tab" data-lang="cat_edu">EĞİTİM & ATÖLYE</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link rounded-pill px-4 me-2" id="social-tab" data-bs-toggle="tab" data-bs-target="#social" type="button" role="tab" data-lang="cat_social">SOSYAL ETKİ</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link rounded-pill px-4" id="global-tab" data-bs-toggle="tab" data-bs-target="#global" type="button" role="tab" data-lang="cat_global">ULUSLARARASI</button>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5 text-uppercase" data-lang="projects_title">Projelerimiz</h2>
+            
+            <div class="tab-content" id="projectTabContent">
+                
+                <div class="tab-pane fade show active" id="edu" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="card h-100 shadow-sm border-0 project-card">
+                                <div class="card-body">
+                                    <h5 class="fw-bold" data-lang="proj_minik_title">Minik Mühendisler</h5>
+                                    <p class="card-text text-muted small" data-lang="proj_minik_desc">
+                                        İlkokullarda "Origami Tuzluk" etkinliği ile mühendislik kavramlarını oyunla öğrettik.
+                                    </p>
+                                    <span class="badge bg-primary">Eğitim</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="card h-100 shadow-sm border-0 project-card">
+                                <div class="card-body">
+                                    <h5 class="fw-bold" data-lang="proj_middle_title">Ortaokul Buluşmaları</h5>
+                                    <p class="card-text text-muted small" data-lang="proj_middle_desc">
+                                        Jevzi Özbey Ortaokulu gibi okullarda "Mühendislik Tabu" oyunu oynattık.
+                                    </p>
+                                    <span class="badge bg-primary">Mentörlük</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="card h-100 shadow-sm border-0 project-card">
+                                <div class="card-body">
+                                    <h5 class="fw-bold" data-lang="proj_game_title">Scratch ile Kodlama</h5>
+                                    <p class="card-text text-muted small" data-lang="proj_game_desc">
+                                        REEFSCAPE temalı dijital oyun geliştirdik. Çocuklara kodlamayı sevdirdik.
+                                    </p>
+                                    <span class="badge bg-warning text-dark">Yazılım</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="social" role="tabpanel">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="card h-100 shadow-sm border-0 project-card">
+                                <div class="card-body">
+                                    <h5 class="fw-bold" data-lang="proj_techno_title">Technovation Girls</h5>
+                                    <p class="card-text text-muted small" data-lang="proj_techno_desc">
+                                        Kız öğrencilerin STEM alanındaki varlığını güçlendirdik.
+                                    </p>
+                                    <span class="badge bg-success">Kadın Gücü</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="card h-100 shadow-sm border-0 project-card">
+                                <div class="card-body">
+                                    <h5 class="fw-bold" data-lang="proj_media_title">Oku, Keşfet & Dinle</h5>
+                                    <p class="card-text text-muted small" data-lang="proj_media_desc">
+                                        Podcast yayınımızla entelektüel birikimi artırmayı hedefledik.
+                                    </p>
+                                    <span class="badge bg-danger">Medya</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="global" role="tabpanel">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="card h-100 shadow-sm border-0 project-card">
+                                <div class="card-body">
+                                    <h5 class="fw-bold" data-lang="proj_global_title">Global Etkileşim</h5>
+                                    <p class="card-text text-muted small" data-lang="proj_global_desc">
+                                        İngiltere ve Azerbaycan ile online toplantılar yapıp kültür alışverişinde bulunduk.
+                                    </p>
+                                    <span class="badge bg-info text-dark">Uluslararası</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-dark text-white position-relative overflow-hidden">
+        <div style="position: absolute; top: -20px; right: -20px; font-size: 15rem; color: rgba(255,255,255,0.03); transform: rotate(-15deg); pointer-events: none;">
+            <i class="fa-solid fa-microphone-lines"></i>
+        </div>
+
+        <div class="container position-relative z-1 text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="mb-4">
+                        <i class="fa-solid fa-podcast fa-4x text-danger animate-pulse"></i>
+                    </div>
+                    <h2 class="fw-bold display-5 mb-3" data-lang="podcast_new_title">YENİ PODCAST SERİSİ</h2>
+                    <p class="lead text-white-50 mb-5" data-lang="podcast_new_desc">
+                        Bilim, teknoloji ve gelecek üzerine yepyeni bir serüven başlıyor. Beklemede kalın!
+                    </p>
+                    
+                    <div class="d-inline-block border border-danger rounded-pill px-5 py-3 shadow-lg" style="background: rgba(214, 0, 28, 0.1); backdrop-filter: blur(5px);">
+                        <i class="fa-solid fa-hourglass-half text-danger me-2"></i>
+                        <span class="fw-bold letter-spacing-2" data-lang="podcast_soon_badge">YAKINDA GELİYOR</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 bg-black text-white text-center">
+        <div class="container">
+            <p class="small text-muted mb-0" data-lang="footer_rights">© 2026 Sancar Robotics #10470. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../language.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Haritayı oluştur ve dünya görünümüne ayarla (Zoom: 2)
+            // Türkiye'ye yakın bir merkez: [39, 35]
+            var map = L.map('outreachMap').setView([39.93, 32.85], 2);
+
+            // Karanlık Tema Harita Katmanı (CartoDB Dark Matter)
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+                subdomains: 'abcd',
+                maxZoom: 19
+            }).addTo(map);
+
+            // Özel Kırmızı Nokta (CircleMarker) Stili
+            var markerOptions = {
+                color: '#D6001C',       // Sancar Kırmızısı
+                fillColor: '#D6001C',
+                fillOpacity: 0.8,
+                radius: 6,              // Nokta büyüklüğü
+                weight: 2               // Kenar kalınlığı
+            };
+
+            // 1. ANKARA (Red Fox, Gulf Tech, Robest, Chaotics, Sancar)
+            var ankara = L.circleMarker([39.9334, 32.8597], markerOptions).addTo(map);
+            ankara.bindPopup("<b>ANKARA</b><br>Red Fox<br>Gulf Tech<br>Robest<br>Chaotics");
+
+            // 2. İZMİR (Destan)
+            var izmir = L.circleMarker([38.4192, 27.1287], markerOptions).addTo(map);
+            izmir.bindPopup("<b>İZMİR</b><br>Destan");
+
+            // 3. MANİSA (Conquera - DÜZELTİLDİ)
+            var manisa = L.circleMarker([38.6191, 27.4289], markerOptions).addTo(map);
+            manisa.bindPopup("<b>MANİSA</b><br>Conquera");
+
+            // 4. ANTALYA (Luminous)
+            var antalya = L.circleMarker([36.8969, 30.7133], markerOptions).addTo(map);
+            antalya.bindPopup("<b>ANTALYA</b><br>Luminous");
+
+            // 5. KIRGIZİSTAN (Jeltoqsan) - Bishkek
+            var bishkek = L.circleMarker([42.8746, 74.5698], markerOptions).addTo(map);
+            bishkek.bindPopup("<b>KIRGIZİSTAN</b><br>Jeltoqsan");
+
+            // 6. CALIFORNIA (Space Cookies) - Mountain View
+            var california = L.circleMarker([37.3861, -122.0839], markerOptions).addTo(map);
+            california.bindPopup("<b>CALIFORNIA, USA</b><br>Space Cookies<br><i>NASA Ames Research Center</i>");
+
+            // Harita yüklendiğinde hafif animasyonla noktaları göster
+            setTimeout(function(){ map.invalidateSize(); }, 500);
+        });
+    </script>
+
+</body>
+</html>
